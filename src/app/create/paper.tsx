@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input";
+import { InputNoFocus } from "@/components/ui/inputnofocus";
 import { cn } from "@/lib/utils";
 import { Space_Grotesk } from "next/font/google";
 
@@ -16,13 +16,13 @@ export default function Paper() {
       textColor: "#666666",
     },
     palette3: {
-      header: { backgroundColor: "#64ffda", textColor: "#ffffff" },
+      header: { backgroundColor: "#eb7f13", textColor: "#ffffff" },
     },
   };
   const selectedPalette = colorPalettes.palette1;
   return (
-    <main className="flex flex-col justify-center items-center mt-10">
-      <div className="h-[800px] w-[600px] shadow-2xl">
+    <main className="flex flex-col justify-center items-center">
+      <div className="mt-10 h-[800px] w-[600px] shadow-2xl">
         <div
           className="flex justify-between h-15 p-10"
           style={{
@@ -65,10 +65,11 @@ export default function Paper() {
           <div className="flex justify-center pr-5">
             <div className="break-all">
               <h1
-                className={cn(
-                  space_grok1.className,
-                  "text-base mb-2 bg-gray-200 w-60"
-                )}
+                className={cn(space_grok1.className, "text-base mb-2 w-60")}
+                style={{
+                  backgroundColor: selectedPalette.backgroundColor,
+                  color: selectedPalette.textColor,
+                }}
               >
                 Description
               </h1>
@@ -77,10 +78,11 @@ export default function Paper() {
             <div className="flex">
               <div className="flex flex-col break-all">
                 <h1
-                  className={cn(
-                    space_grok1.className,
-                    "text-base mb-2 bg-gray-200 w-20"
-                  )}
+                  className={cn(space_grok1.className, "text-base mb-2 w-20")}
+                  style={{
+                    backgroundColor: selectedPalette.backgroundColor,
+                    color: selectedPalette.textColor,
+                  }}
                 >
                   Rate
                 </h1>
@@ -88,10 +90,11 @@ export default function Paper() {
               </div>
               <div className="flex flex-col break-all">
                 <h1
-                  className={cn(
-                    space_grok1.className,
-                    "text-base mb-2 bg-gray-200 w-20"
-                  )}
+                  className={cn(space_grok1.className, "text-base mb-2 w-20")}
+                  style={{
+                    backgroundColor: selectedPalette.backgroundColor,
+                    color: selectedPalette.textColor,
+                  }}
                 >
                   Hours
                 </h1>
@@ -101,8 +104,12 @@ export default function Paper() {
                 <h1
                   className={cn(
                     space_grok1.className,
-                    "text-base mb-2 max-w-20 bg-gray-200"
+                    "text-base mb-2 max-w-20"
                   )}
+                  style={{
+                    backgroundColor: selectedPalette.backgroundColor,
+                    color: selectedPalette.textColor,
+                  }}
                 >
                   Amount
                 </h1>
@@ -119,8 +126,16 @@ export default function Paper() {
             <p className="text-sm">$200.00</p>
           </div>
         </div>
-        <footer className="text-center">
-          <h1 className="font-semibold">Thank You!</h1>
+        <footer className="absolute bottom-5 w-[600px] text-center mb-4">
+          <div
+            className="h-15 p-10"
+            style={{
+              backgroundColor: selectedPalette.backgroundColor,
+              color: selectedPalette.textColor,
+            }}
+          >
+            <h1 className="font-semibold">Thank You!</h1>
+          </div>
         </footer>
       </div>
     </main>

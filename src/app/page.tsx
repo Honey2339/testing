@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { InputNoFocus } from "@/components/ui/inputnofocus";
 import { cn } from "@/lib/utils";
 import { Roboto } from "next/font/google";
 
@@ -30,7 +30,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="flex justify-center mt-4 gap-3">
-          <Input
+          <InputNoFocus
             className="max-w-sm p-5 ring-1 ring-green-300"
             placeholder="Enter You Email"
           />
